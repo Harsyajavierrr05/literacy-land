@@ -1,12 +1,92 @@
+/* custom.css */
+
+/* 1. GLOBAL RESET & FONT FAMILY (NATIVE) */
 body {
-    font-family: 'Roboto', 'Segoe UI', sans-serif;
-        background-color: #f8fafc;
-        /* Latar belakang terang (mirip dengan proyek lama) */
-        color: #333
+    /* Set font family secara native */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8fafc;
+    /* Latar belakang terang, warna custom */
+    color: #333;
+    box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+/* Memastikan spasi bawah pada gambar hilang */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* 2. CUSTOM FOOTER (SYARAT UTS) */
+/* Ganti warna Bootstrap default dengan warna dark theme ComicVerse */
+footer {
+    text-align: center;
+    padding: 1.5em;
+    background-color: #1f2937;
+    /* Warna gelap tema lama */
+    color: white;
+    margin-top: 4em;
+}
+
+
+/* 3. HOVER KARTU PRODUK (ANIMASI CUSTOM) */
+/* Target class Bootstrap (.card) dan tambahkan animasi CSS Native */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    /* Hilangkan border default Bootstrap */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Geser kartu ke atas saat di-hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    /* Bayangan yang lebih dramatis */
+}
+
+
+/* 4. TOAST NOTIFICATION (CSS NATIVE untuk JS Interaktif) */
+/* Mengambil styling Toast yang sudah ada di logic common.js Anda */
+.toast {
+    position: fixed;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    /* Biru terang untuk notifikasi */
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border-radius: 6px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    z-index: 1000;
+    font-size: 1em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+    bottom: 20px;
+    opacity: 1;
+}
+
+
+/* 5. SKIP LINK (AKSESIBILITAS) */
+/* Syarat CSS native yang baik, diambil dari style lama Anda */
+.skip-link {
+    position: absolute !important;
+    left: -9999px !important;
+    color: #fff;
+    padding: 0.5em 1em;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    left: 16px !important;
+    /* Memunculkan link di pojok kiri atas saat di-tab */
+    width: auto !important;
+    height: auto !important;
+    outline: 2px solid #2563eb;
 }
