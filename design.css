@@ -1,0 +1,12 @@
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+        background-color: #f8fafc;
+        /* Latar belakang terang (mirip dengan proyek lama) */
+        color: #333
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
