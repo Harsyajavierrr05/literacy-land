@@ -41,6 +41,74 @@
         </div>
     </nav>
 
+    <main class="container my-5">
+        <h1 class="mb-5 text-center">Hubungi Kami</h1>
+    
+        <div class="row g-4">
+    
+            <div class="col-md-7">
+                <div class="card shadow p-4">
+                    <h3 class="card-title mb-4">Kirim Pesan</h3>
+    
+                    <form id="contactForm" onsubmit="handleContactValidation(event)">
+    
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="invalid-feedback" id="nameError"></div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                            <div class="invalid-feedback" id="emailError"></div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            <div class="invalid-feedback" id="messageError"></div>
+                        </div>
+    
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="col-md-5">
+                <div class="card shadow p-4 bg-light h-100">
+                    <h3 class="card-title mb-4">Informasi Toko</h3>
+    
+                    <div class="mb-3">
+                        <h5 class="fw-bold">Email Dukungan</h5>
+                        <p class="text-secondary">support@literasiverse.com</p>
+                    </div>
+    
+                    <div class="mb-3">
+                        <h5 class="fw-bold">Telepon/WhatsApp</h5>
+                        <p class="text-secondary">+62 812-3456-7890</p>
+                    </div>
+    
+                    <div class="mb-3">
+                        <h5 class="fw-bold">Jam Operasional</h5>
+                        <p class="text-secondary">Senin - Jumat, 09:00 - 17:00 WIB</p>
+                    </div>
+    
+                    <h5 class="fw-bold mt-4">Alamat Kami</h5>
+                    <p class="text-secondary">Jl. Pemrograman Web No. 123, Surabaya</p>
+    
+                    <div class="store-location">
+                        Lokasi Toko (Placeholder)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-white p-4 text-center">
+        <p>© 2025 LiterasiVerse. All Rights Reserved.</p>
+    </footer>
+
 </body>
 
 </html>
