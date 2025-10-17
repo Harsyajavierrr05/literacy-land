@@ -39,5 +39,29 @@
         </div>
     </nav>
     
+    <main class="container my-5">
+        <h1 class="mb-4">Seluruh Katalog</h1>
+    
+        <div class="row mb-4">
+            <div class="col-md-9 d-flex gap-3">
+                <input type="text" id="catalogSearchInput" class="form-control" placeholder="Cari judul komik..." />
+            </div>
+            <div class="col-md-3">
+                <label for="catalogGenreFilter" class="visually-hidden">Filter berdasarkan genre</label>
+                <select id="catalogGenreFilter" class="form-select">
+                    <option value="">Semua Genre</option>
+                </select>
+            </div>
+        </div>
+    
+        <div id="catalog-list" class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/catalog.js"></script>
+
+
 </body>
 </html>
