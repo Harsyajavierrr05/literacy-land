@@ -90,3 +90,10 @@ footer {
     height: auto !important;
     outline: 2px solid #2563eb;
 }
+
+.carousel-item img {
+    display: block;
+    float: none;
+    opacity: 1;
+    transition: transform 0.6s ease-in-out;
+}
