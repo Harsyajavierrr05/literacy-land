@@ -81,6 +81,33 @@ function showToast(msg) {
 }
 
 
+function updateCartQuantity(productId, newQuantity) {
+    let cart = getCart(); // Dari common.js
+    const itemIndex = cart.findIndex(item => item.id === productId);
+
+    if (itemIndex > -1) {
+        cart[itemIndex].quantity = newQuantity;
+        saveCart(cart); 
+    }
+}
+
+// Tambahkan ke common.js (di bawah function saveCart)
+
+function removeFromCart(productId) {
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== productId);
+    saveCart(cart); // Simpan keranjang yang sudah di-filter
+}
+
+function updateCartQuantity(productId, newQuantity) {
+    let cart = getCart();
+    const itemIndex = cart.findIndex(item => item.id === productId);
+    if (itemIndex > -1) {
+        cart[itemIndex].quantity = newQuantity;
+        saveCart(cart);
+    }
+}
+
 /* ---------- INIT ON LOAD ---------- */
 
 // Panggil updateCartBadge saat dokumen dimuat untuk memastikan hitungan keranjang benar

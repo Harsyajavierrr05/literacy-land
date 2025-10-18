@@ -5,13 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const catalogListContainer = document.getElementById("catalog-list");
     const searchInput = document.getElementById("catalogSearchInput");
     const genreFilter = document.getElementById("catalogGenreFilter"); 
+    
+    // Pastikan array products sudah terdefinisikan dari data.js
+    if (typeof products === 'undefined' || products.length === 0) {
+        catalogListContainer.innerHTML = '<p class="text-center w-100 mt-5">Gagal memuat data produk. Periksa file data.js.</p>';
+        return;
+    }
 
     // --- FUNGSI UTAMA: MERENDER PRODUK KE LAYOUT BOOTSTRAP ---
     function renderProducts(productsToDisplay) {
         catalogListContainer.innerHTML = ""; // Bersihkan konten lama
 
         if (productsToDisplay.length === 0) {
-            catalogListContainer.innerHTML = '<p class="text-center w-100">Tidak ada produk yang ditemukan.</p>';
+            catalogListContainer.innerHTML = '<p class="text-center w-100 mt-5 text-danger">Tidak ada produk yang ditemukan dengan kriteria tersebut.</p>';
             return;
         }
 
@@ -19,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productWrapper = document.createElement('div');
             productWrapper.className = 'col'; // Kelas kolom Bootstrap
             
-            // Layout Card Produk (Sama dengan main.js)
+            // Layout Card Produk (Template Literal)
             productWrapper.innerHTML = `
               <div class="card shadow h-100" data-product-id="${item.id}">
                 <img src="${item.image_url || item.image}" class="card-img-top" alt="${item.title}"> 
@@ -39,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             catalogListContainer.appendChild(productWrapper);
 
-            // Event listener untuk tombol "Tambah ke Keranjang"
+            // Tambahkan event listener untuk tombol "Tambah ke Keranjang"
             productWrapper.querySelector('.add-to-cart-btn').addEventListener('click', () => {
                 addToCart(item); // Memanggil fungsi global dari common.js
             });
@@ -52,8 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedGenre = genreFilter.value;
 
         const filteredProducts = products.filter(product => {
-            const matchesSearch = product.title.toLowerCase().includes(searchTerm);
+            // Cek apakah judul atau penulis cocok dengan pencarian
+            const matchesSearch = product.title.toLowerCase().includes(searchTerm) ||
+                                  (product.author && product.author.toLowerCase().includes(searchTerm));
+
+            // Cek apakah genre cocok
             const matchesGenre = selectedGenre === "" || (product.genre && product.genre === selectedGenre);
+
             return matchesSearch && matchesGenre;
         });
 
@@ -61,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- INIT ---
-    // 1. Isi filter dropdown
-    const uniqueGenres = [...new Set(products.map(p => p.genre))].filter(g => g);
+    // 1. Isi filter dropdown berdasarkan data yang ada
+    const uniqueGenres = [...new Set(products.map(p => p.genre))].filter(g => g).sort();
     genreFilter.innerHTML = '<option value="">Semua Genre</option>' + uniqueGenres.map(genre => `<option value="${genre}">${genre}</option>`).join('');
 
     // 2. Tambahkan event listener untuk memicu filter
