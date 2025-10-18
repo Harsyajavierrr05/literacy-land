@@ -18,10 +18,23 @@ img {
     height: auto;
     display: block;
 }
+.custom-navbar-bg {
+    /* Warna utama gelap (Navy Blue/Black) */
+    background-color: #1f2937 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Memastikan teks di navbar gelap terlihat */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 10px 15px;
+    /* Memberi padding antar link */
+}
 
 
-/* 2. CUSTOM FOOTER (SYARAT UTS) */
-/* Ganti warna Bootstrap default dengan warna dark theme ComicVerse */
+
 footer {
     text-align: center;
     padding: 1.5em;
