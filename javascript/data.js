@@ -3,7 +3,7 @@ const products = [
         id: 1,
         title: "Self-Theories",
         price: 125000,
-        image: "assets\WhatsApp Image 2025-10-18 at 12.54.30_04df8a2f.jpg",
+        image: "assets/WhatsApp Image 2025-10-18 at 12.54.30_04df8a2f.jpg",
         genre: "Self-Improvement"
     },
     {

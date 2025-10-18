@@ -1,27 +1,22 @@
-// javascript/product-detail.js
+// js/product-detail.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const detailContainer = document.getElementById('product-detail-container');
     const loadingMessage = document.getElementById('loading-message');
     const errorMessage = document.getElementById('error-message');
 
-    // 1. Fungsi untuk mendapatkan ID dari URL parameter (?id=X)
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    const productId = parseInt(getQueryParam('id'));
+    // 1. Dapatkan ID dari URL parameter (?id=X)
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
 
     if (isNaN(productId)) {
         loadingMessage.remove();
         errorMessage.classList.remove('d-none');
-        errorMessage.textContent = 'ID produk tidak valid.';
+        errorMessage.textContent = 'ID produk tidak valid di URL.';
         return;
     }
     
     // 2. Cari Produk di array global 'products' (dari data.js)
-    // Asumsi array 'products' ada
     const product = products.find(p => p.id === productId);
 
     if (product) {
@@ -31,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         detailContainer.innerHTML = `
             <div class="row g-4">
                 
-                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                <div class="col-md-5 d-flex justify-content-center align-items-start">
                     <img src="${product.image_url || product.image}" 
                          alt="${product.title}" 
                          class="img-fluid rounded-3 shadow-lg"
@@ -54,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </ul>
 
                     <div class="mt-4 pt-3 border-top">
-                        <button id="add-to-cart-detail-btn" class="btn btn-primary btn-lg me-3" data-product-id="${product.id}">
+                        <button id="add-to-cart-detail-btn" class="btn btn-primary btn-lg me-3">
                             Tambah ke Keranjang
                         </button>
                         <button onclick="window.history.back()" class="btn btn-outline-secondary btn-lg">
@@ -70,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (addToCartBtn) {
             addToCartBtn.addEventListener('click', () => {
                 // Memanggil fungsi global addToCart dari common.js
-                // Kirim objek produk lengkap
                 addToCart(product); 
             });
         }
