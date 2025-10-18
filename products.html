@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="design.css">
 </head>
 <body>
+    <!-- Navbar -->
     <div class="container-fluid bg-light p-1 d-flex justify-content-end align-items-center border-bottom">
-    
         <span class="ms-2 me-3">ID</span>
+        <span id="cart-count" class="badge bg-primary ms-2"></span>
     </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar-bg mb-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="logo.webp" alt="Literacy Land" height="40" class="d-inline-block align-text-top me-2">
@@ -39,19 +39,15 @@
         </div>
     </nav>
 
-
+    <!-- Hero Carousel -->
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="assets/Where the Book Taste is Simple to Get.png" class="d-block w-100 carousel-image"
-                    alt="Slide 1">
+                    alt="Where the Book Taste is Simple to Get">
             </div>
-    
-    
             <div class="carousel-item">
-                <img src="assets/Literacy Land.png" class="d-block w-100" alt="Slide 2" <img src="assets/Literacy Land.png"
-                    class="d-block w-100 carousel-image" alt="Slide 2">
-    
+                <img src="assets/Literacy Land.png" class="d-block w-100 carousel-image" alt="Literacy Land">
             </div>
     
             <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -70,22 +66,25 @@
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide="1" title="Slide 2"></button>
             </div>
         </div>
+    </div>
 
-        <main class="container my-5">
-            <h1 class="mb-4 text-center">Seluruh Koleksi Buku Kami</h1>
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1 class="mb-4 text-center">Seluruh Koleksi Buku Kami</h1>
         
-            <div id="products-all-list" class="row row-cols-1 row-cols-md-4 g-4">
-            </div>
-        </main>
+        <div id="products-all-list" class="row row-cols-1 row-cols-md-4 g-4">
+        </div>
+    </main>
 
-        <footer class="bg-dark text-white p-4 text-center">
-            <p>© 2025 LiterasiVerse. All Rights Reserved.</p>
-        </footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-white p-4 text-center">
+        <p>© 2025 LiterasiVerse. All Rights Reserved.</p>
+    </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="javascript/common.js"></script>
-        <script src="javascript/data.js"></script>
-        <script src="javascript/productsall.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="javascript/common.js"></script>
+    <script src="javascript/data.js"></script>
+    <script src="javascript/productsall.js"></script>
 </body>
 </html>

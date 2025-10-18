@@ -1,5 +1,3 @@
-/* custom.css */
-
 /* 1. GLOBAL RESET & FONT FAMILY (NATIVE) */
 body {
     /* Set font family secara native */
@@ -7,8 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background: black;
-    /* Latar belakang terang, warna custom */
-    color: #333;
+    color: wheat;
     box-sizing: border-box;
 }
 

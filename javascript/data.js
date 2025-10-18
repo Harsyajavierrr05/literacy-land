@@ -18,7 +18,7 @@ const products = [
         title: "The Impostor Cure",
         price: 60000,
         image: "assets/Impostor Cure.jpg",
-        genre: "Self-Imporevement"
+        genre: "Self-Improvement"
     },
 
 ];

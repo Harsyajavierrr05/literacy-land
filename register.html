@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="design.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid bg-light p-1 d-flex justify-content-end align-items-center border-bottom">
+        <span class="ms-2 me-3">ID</span>
+        <span id="cart-count" class="badge bg-primary ms-2"></span>
+    </div>
+    <div class="container login-container">
         <h2>Register</h2>
         <form id="registerForm">
             <div class="form-group">
@@ -24,13 +28,14 @@
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
             <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+            <button type="button" class="btn btn-secondary" onclick="goBack()">Cancel</button>
         </form>
         <p>Already have an account? <a href="login.html">Login here</a>.</p>
     </div>
 
-            <footer class="bg-dark text-white p-4 text-center">
-                <p>© 2025 LiterasiVerse. All Rights Reserved.</p>
-            </footer>
+    <footer class="bg-dark text-white p-4 text-center">
+        <p>© 2025 LiterasiVerse. All Rights Reserved.</p>
+    </footer>
 
     <script>
         function register() {
@@ -41,6 +46,10 @@
             console.log('Email:', email);
             console.log('Password:', password);
             alert('Registration successful (data logged to console)');
+        }
+
+        function goBack() {
+            window.history.back(); // Navigate to the previous page
         }
     </script>
 </body>
