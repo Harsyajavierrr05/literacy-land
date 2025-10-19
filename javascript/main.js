@@ -1,5 +1,3 @@
-// javascript/product-detail.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const detailContainer = document.getElementById('product-detail-container');
     const loadingMessage = document.getElementById('loading-message');

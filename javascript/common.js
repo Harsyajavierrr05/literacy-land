@@ -91,7 +91,7 @@ function updateCartQuantity(productId, newQuantity) {
     }
 }
 
-// Tambahkan ke common.js (di bawah function saveCart)
+
 
 function removeFromCart(productId) {
     let cart = getCart();
