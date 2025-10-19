@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h5 class="mt-4">Spesifikasi</h5>
                     <ul class="list-unstyled">
                         <li><strong>Genre:</strong> ${product.genre || 'N/A'}</li>
-                        <li><strong>Penerbit:</strong> ${product.publisher || 'N/A'}</li>
+                        <li><strong>Publisher:</strong> ${product.publisher || 'N/A'}</li>
                     </ul>
 
                     <div class="mt-4 pt-3 border-top">

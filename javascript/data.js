@@ -33,7 +33,7 @@ const products = [
         id: 5,
         title: "The Quintessential Quintuplets",
         price: 70000,
-        image: "assets/Qunitessential.jpg",
+        image: "assets/Quintessential.jpg",
         genre: "Manga"
     }
 ];
