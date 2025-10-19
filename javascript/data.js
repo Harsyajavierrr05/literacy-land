@@ -11,7 +11,7 @@ const products = [
         title: "You Are A Badass",
         price: 45000,
         image: "assets/You are a Badass.jpg",
-        genre: "Romance"
+        genre: "Self-Improvement"
     },
     {
         id: 3,
@@ -21,4 +21,19 @@ const products = [
         genre: "Self-Improvement"
     },
 
+    {
+        id: 4,
+        title: "Solo Leveling Vol.5",
+        price: 75000,
+        image: "assets/Solo Leveling vol.5.jpg",
+        genre: "Manga"
+    },
+
+    {
+        id: 5,
+        title: "The Quintessential Quintuplets",
+        price: 70000,
+        image: "assets/Qunitessential.jpg",
+        genre: "Manga"
+    }
 ];
