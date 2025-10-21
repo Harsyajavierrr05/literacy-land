@@ -1,4 +1,5 @@
 # literacy-land
+Greetings, Harsya here! Welcome to The Literacy Land!
 This Github Repository was made for PBP Midterm Personal Project/Project Mandiri UTS Pemrograman Berbasis Platform
 
 So, what i did here? This is the project for creating simple yet functional e-commerce especially for bookstore that i running based.
